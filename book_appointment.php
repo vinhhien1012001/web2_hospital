@@ -49,7 +49,7 @@
         $notes = $_POST['notes'];
         $conn->query("INSERT INTO appointments (doctor_id, patient_id, appointment_date, notes) VALUES ('$doctor_id', '$patient_id', '$appointment_date', '$notes') ");
 
-        echo "APPOINTMENT ADDED!";
+        echo "APPOINTMENT BOOKED!";
     }
     ?>
 </body>
