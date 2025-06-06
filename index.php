@@ -1,3 +1,4 @@
+<?php include 'config.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,13 @@
 
 <body>
     <div class="container">
+        <h2></h2>
+        <form method="POST"></form>
     </div>
+
+    <?php
+
+    ?>
 </body>
 
 </html>
