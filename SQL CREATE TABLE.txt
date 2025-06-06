@@ -1,0 +1,36 @@
+CREATE DATABASE if NOT EXISTS db_hospital;
+USE db_hospital;
+
+CREATE TABLE specialties (
+	specialty_id INT AUTO_INCREMENT PRIMARY KEY,
+    name varchar(100) NOT NULL
+);
+
+CREATE TABLE doctors (
+  	doctor_id int AUTO_INCREMENT PRIMARY KEY,
+    name varchar(100) NOT NULL,
+    specialty_id int,
+    FOREIGN KEY (specialty_id) REFERENCES specialties(specialty_id)
+);
+
+CREATE TABLE patients (
+	patient_id int AUTO_INCREMENT PRIMARY KEY,
+    name varchar(100) NOT NULL,
+    birth_date DATE,
+    phone varchar(25)
+);
+
+CREATE TABLE appointments(
+  	appointment_id int AUTO_INCREMENT PRIMARY KEY,
+    doctor_id int NOT NULL,
+    patient_id int NOT NULL,
+    appointment_date datetime,
+    notes TEXT,
+    FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id),
+    FOREIGN KEY (patient_id) REFERENCES patients(patient_id)
+);
+
+INSERT INTO specialties (name) VALUES 
+('Cardiology'),
+('Neurology'),
+('Dermatology');
